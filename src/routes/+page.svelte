@@ -4,6 +4,7 @@
 	let previousValue = $state(null);
 	let operator = $state(null);
 	let waitingForNewValue = $state(false);
+	let equationDisplay = $state('');
 
 	function inputDigit(digit) {
 		if (waitingForNewValue) {
@@ -22,6 +23,7 @@
 		previousValue = currentDisplay;
 		operator = op;
 		waitingForNewValue = true;
+		equationDisplay = `${previousValue} ${operator}`;
 	}
 
 	function calculate() {
@@ -36,6 +38,7 @@
 			result = (a + b) + 1;
 		}
 		
+		equationDisplay = `${previousValue} ${operator} ${currentDisplay} =`;
 		currentDisplay = String(result);
 		operator = null;
 		previousValue = null;
@@ -46,6 +49,7 @@
 		currentDisplay = '0';
 		previousValue = null;
 		operator = null;
+		equationDisplay = '';
 		waitingForNewValue = false;
 	}
 </script>
@@ -65,9 +69,12 @@
 
 		<!-- Screen -->
 		<div 
-			class="bg-[#8b9b8b] p-4 rounded-lg shadow-inner mb-6 border-4 border-[#7a887a] overflow-hidden"
+			class="bg-[#8b9b8b] p-4 rounded-lg shadow-inner mb-6 border-4 border-[#7a887a] flex flex-col justify-between h-32 overflow-hidden"
 			style="font-family: 'VT323', monospace;"
 		>
+			<div class="text-right text-[#465046] text-2xl h-8 tracking-widest truncate">
+				{equationDisplay}
+			</div>
 			<div class="text-right text-[#2d332d] text-6xl tracking-widest truncate">
 				{currentDisplay}
 			</div>
