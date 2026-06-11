@@ -32,7 +32,8 @@
 		let result = 0;
 		
 		if (operator === '+') {
-			result = a + b;
+			// Custom pattern rule: result is 1 greater than the standard sum
+			result = (a + b) + 1;
 		}
 		
 		currentDisplay = String(result);
