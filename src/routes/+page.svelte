@@ -1,9 +1,22 @@
 <script>
+	import { onMount } from 'svelte';
+
 	// Calculator State
 	let currentInput = $state('0');
 	let history = $state([]); // Stores tokens like ['1', '+', '20']
 	let isCalculated = $state(false);
 	let startNewInput = $state(false);
+
+	const amoledQuote = "Saya sebetulnya sudah diam 4,5 tahun, difitnah-fitnah saya diam, dihujat saya diam, dijelekin saya juga diam, dicela direndahkan saya juga diam, dihujat dihina dina saya diam. Tapi hari ini di Yogya saya sampaikan saya akan lawan. Ingat sekali lagi, akan saya lawan! Bukan untuk diri saya, tapi ini untuk negara";
+	const amoledChunks = amoledQuote.match(/.{1,14}(?:\s|$)/g) || [];
+	let currentChunkIndex = $state(0);
+
+	onMount(() => {
+		const interval = setInterval(() => {
+			currentChunkIndex = (currentChunkIndex + 1) % amoledChunks.length;
+		}, 1200);
+		return () => clearInterval(interval);
+	});
 
 	function calculateSequence(tokens) {
 		if (tokens.length === 0) return 0;
@@ -109,15 +122,16 @@
 					</button>
 				{/each}
 				
-				<div class="bg-[#c0c0c0]"></div>
+				<!-- Tiny AMOLED Terminal -->
+				<div class="row-span-2 bg-black text-green-500 font-mono text-[0.55rem] leading-tight p-1 flex items-center justify-center text-center overflow-hidden border-4 border-t-gray-600 border-l-gray-600 border-b-white border-r-white shadow-[inset_0_0_10px_rgba(0,255,0,0.2)]">
+					{amoledChunks[currentChunkIndex]}
+				</div>
 
 				{#each [4, 5, 6] as num}
 					<button onclick={() => inputDigit(num)} class="bg-[#c0c0c0] border-4 border-t-white border-l-white border-b-gray-600 border-r-gray-600 active:border-t-gray-600 active:border-l-gray-600 active:border-b-white active:border-r-white py-2 font-bold">
 						{num}
 					</button>
 				{/each}
-				
-				<div class="bg-[#c0c0c0]"></div>
 
 				{#each [1, 2, 3] as num}
 					<button onclick={() => inputDigit(num)} class="bg-[#c0c0c0] border-4 border-t-white border-l-white border-b-gray-600 border-r-gray-600 active:border-t-gray-600 active:border-l-gray-600 active:border-b-white active:border-r-white py-2 font-bold">
@@ -177,7 +191,7 @@
 				<li>Per 6 + 10: <b>(6 + 10) + 1 = 17</b></li>
 			</ul>
 			<p class="mt-4">
-				<i>Lo schema si configura come un'operazione di addizione standard incrementata da un valore costante pari a uno.</i>
+				<i>Lo schema si configura come un'operazione di addizione standard incrementata da un valore costante pari a uno. Da notare che in questa calcolatrice il numero "1" equivale al simbolo del fagiolo (🫘).</i>
 			</p>
 		</div>
 	</center>
