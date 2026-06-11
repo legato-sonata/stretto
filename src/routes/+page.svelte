@@ -212,7 +212,7 @@
 				</li>
 			</ul>
 			<div class="mt-8 text-center">
-				<a href="https://github.com" class="text-blue-700 font-bold hover:underline">GitHub</a>
+				<a href="https://github.com/legato-sonata/stretto" class="text-blue-700 font-bold hover:underline">GitHub</a>
 			</div>
 		</div>
 	</center>
