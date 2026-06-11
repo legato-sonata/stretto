@@ -66,6 +66,12 @@
 	}
 </script>
 
+<svelte:head>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+</svelte:head>
+
 <!-- Using classic 1990s Web 1.0 styling: Times New Roman, gray background, 3D borders -->
 <div class="min-h-screen bg-[#c0c0c0] font-serif p-8">
 	<center>
@@ -145,7 +151,7 @@
 			</p>
 
 			<!-- Ultra-modern, sleek contrast block -->
-			<div class="my-10 p-8 bg-white/90 backdrop-blur-md rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 text-center text-4xl font-sans tracking-wide text-slate-800 overflow-x-auto transform transition-all hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(0,0,0,0.15)] duration-500 ease-out">
+			<div class="my-8 p-4 sm:p-6 bg-white/90 backdrop-blur-md rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 text-center text-2xl sm:text-3xl tracking-wide text-slate-800 overflow-x-auto transform transition-all hover:-translate-y-1 hover:shadow-[0_30px_60px_rgba(0,0,0,0.15)] duration-500 ease-out" style="font-family: 'Fira Code', monospace; font-variant-ligatures: common-ligatures contextual;">
 				<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
 					<mi>f</mi>
 					<mo>(</mo>
