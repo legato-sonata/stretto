@@ -153,15 +153,15 @@
 		
 		<!-- Explanation Section -->
 		<div class="text-left w-full max-w-2xl bg-[#c0c0c0] border-4 border-t-white border-l-white border-b-gray-600 border-r-gray-600 p-6 mb-8 font-serif leading-relaxed">
-			<h2 class="text-xl font-bold mb-4"><u>Analisi Logica</u></h2>
-			<p class="mb-4">
-				La premessa del quesito si fonda su un'incongruenza matematica. Nell'aritmetica standard in base 10, le equazioni fornite risultano false (es. 2 + 10 &ne; 13). Il simbolo "+" e il segno "=" in questo contesto non rappresentano l'addizione e l'uguaglianza matematica convenzionale. Indicano bensì una funzione logica personalizzata, concepita per il riconoscimento di schemi.
-			</p>
+			<h1 class="text-3xl font-bold mb-2">Custom Incremented Addition</h1>
+			<p class="mb-6 font-bold text-[#008000]">Difficulty: Easy</p>
 
-			<h2 class="text-xl font-bold mb-4 mt-6"><u>Identificazione dello Schema</u></h2>
+			<h3 class="text-xl font-bold mb-2 border-b border-gray-500 pb-1">Description</h3>
 			<p class="mb-4">
-				La regola soggiacente che governa questo insieme di dati stabilisce che il risultato finale sia esattamente superiore di 1 rispetto alla somma standard dei due numeri forniti.
-				Definendo il lato sinistro dell'equazione con le variabili <i>x</i> e <i>y</i>, lo schema opera secondo la seguente formula:
+				Given two integers <code>x</code> and <code>y</code>, return the result of a custom addition operation. 
+			</p>
+			<p class="mb-4">
+				The custom operation requires calculating the standard sum of the two input integers and then incrementing that sum by exactly 1.
 			</p>
 
 			<!-- Ultra-modern, sleek contrast block -->
@@ -184,15 +184,45 @@
 				</math>
 			</div>
 
-			<p class="mb-2">L'applicazione di questa formula ai dati forniti convalida lo schema:</p>
-			<ul class="list-square list-inside ml-4 space-y-2 mb-4">
-				<li>Per 2 + 10: <b>(2 + 10) + 1 = 13</b></li>
-				<li>Per 2 + 8: <b>(2 + 8) + 1 = 11</b></li>
-				<li>Per 6 + 10: <b>(6 + 10) + 1 = 17</b></li>
+			<h3 class="text-xl font-bold mb-2 border-b border-gray-500 pb-1">Examples</h3>
+			
+			<div class="mb-6">
+				<p class="font-bold mb-1">Example 1:</p>
+				<div class="bg-gray-100 border border-gray-400 p-3 font-mono text-sm mb-2">
+					<strong>Input:</strong> x = 2, y = 10<br>
+					<strong>Output:</strong> 13<br>
+					<strong>Explanation:</strong> The standard sum of 2 and 10 is 12. Incrementing the sum by 1 yields 13.
+				</div>
+			</div>
+
+			<div class="mb-6">
+				<p class="font-bold mb-1">Example 2:</p>
+				<div class="bg-gray-100 border border-gray-400 p-3 font-mono text-sm mb-2">
+					<strong>Input:</strong> x = 2, y = 8<br>
+					<strong>Output:</strong> 11<br>
+					<strong>Explanation:</strong> The standard sum of 2 and 8 is 10. Incrementing the sum by 1 yields 11.
+				</div>
+			</div>
+
+			<div class="mb-6">
+				<p class="font-bold mb-1">Example 3:</p>
+				<div class="bg-gray-100 border border-gray-400 p-3 font-mono text-sm mb-2">
+					<strong>Input:</strong> x = 6, y = 10<br>
+					<strong>Output:</strong> 17<br>
+					<strong>Explanation:</strong> The standard sum of 6 and 10 is 16. Incrementing the sum by 1 yields 17.
+				</div>
+			</div>
+
+			<h3 class="text-xl font-bold mb-2 border-b border-gray-500 pb-1">Constraints</h3>
+			<ul class="list-square list-inside ml-4 mt-2">
+				<li>
+					<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline" class="text-lg">
+						<mo>&#x2212;</mo><msup><mn>10</mn><mn>4</mn></msup>
+						<mo>&#x2264;</mo><mi>x</mi><mo>,</mo><mi>y</mi>
+						<mo>&#x2264;</mo><msup><mn>10</mn><mn>4</mn></msup>
+					</math>
+				</li>
 			</ul>
-			<p class="mt-4">
-				<i>Lo schema si configura come un'operazione di addizione standard incrementata da un valore costante pari a uno. Da notare che in questa calcolatrice il numero "1" equivale al simbolo del fagiolo (🫘).</i>
-			</p>
 		</div>
 	</center>
 </div>
