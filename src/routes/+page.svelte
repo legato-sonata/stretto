@@ -1,9 +1,8 @@
 <script>
 	import { onMount } from 'svelte';
 
-	// Calculator State
 	let currentInput = $state('0');
-	let history = $state([]); // Stores tokens like ['1', '+', '20']
+	let history = $state([]);
 	let isCalculated = $state(false);
 	let startNewInput = $state(false);
 
@@ -25,7 +24,6 @@
 			let op = tokens[i];
 			let nextVal = parseFloat(tokens[i+1]);
 			if (op === '+') {
-				// Custom pattern rule: result is 1 greater than the standard sum
 				val = (val + nextVal) + 1;
 			}
 		}
@@ -51,7 +49,6 @@
 			history = [currentInput, op];
 			isCalculated = false;
 		} else if (startNewInput) {
-			// If they press an operator twice, replace the last one
 			if (history.length > 0) {
 				history[history.length - 1] = op;
 			}
@@ -85,15 +82,11 @@
 	<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
 </svelte:head>
 
-<!-- Using classic 1990s Web 1.0 styling: Times New Roman, gray background, 3D borders -->
 <div class="min-h-screen bg-[#c0c0c0] font-serif p-8">
 	<center>
-		<!-- Main Calculator Container (Classic Table-like look) -->
 		<div class="bg-[#c0c0c0] p-4 mt-8 inline-block border-4 border-t-white border-l-white border-b-gray-600 border-r-gray-600">
 			
-			<!-- Screen Area -->
 			<div class="bg-white border-4 border-t-gray-600 border-l-gray-600 border-b-white border-r-white p-2 mb-4 w-64 text-right">
-				<!-- Equation Display (Live) -->
 				<div class="text-sm text-gray-700 min-h-[1.25rem] mb-2 break-words whitespace-normal text-left">
 					{#if isCalculated}
 						{history.join(' ')} =
@@ -101,13 +94,11 @@
 						{history.join(' ')} {startNewInput ? '' : currentInput}
 					{/if}
 				</div>
-				<!-- Current Input / Result -->
 				<div class="text-2xl font-bold font-mono">
 					{currentInput}
 				</div>
 			</div>
 
-			<!-- Button Grid using HTML-style layout -->
 			<div class="grid grid-cols-4 gap-2">
 				<button onclick={clear} class="col-span-2 bg-[#c0c0c0] border-4 border-t-white border-l-white border-b-gray-600 border-r-gray-600 active:border-t-gray-600 active:border-l-gray-600 active:border-b-white active:border-r-white py-2 font-bold text-red-700">
 					CLEAR
@@ -122,7 +113,6 @@
 					</button>
 				{/each}
 				
-				<!-- Tiny AMOLED Terminal -->
 				<div class="row-span-2 bg-black text-green-500 font-mono text-[0.55rem] leading-tight p-1 flex items-center justify-center text-center overflow-hidden border-4 border-t-gray-600 border-l-gray-600 border-b-white border-r-white shadow-[inset_0_0_10px_rgba(0,255,0,0.2)]">
 					{amoledChunks[currentChunkIndex]}
 				</div>
@@ -151,7 +141,6 @@
 
 		<hr class="my-8 border-gray-600 w-full max-w-lg" />
 		
-		<!-- Explanation Section -->
 		<div class="text-left w-full max-w-2xl bg-[#c0c0c0] border-4 border-t-white border-l-white border-b-gray-600 border-r-gray-600 p-6 mb-8 font-serif leading-relaxed">
 			<h1 class="text-3xl font-bold mb-2">Custom Incremented Addition</h1>
 			<p class="mb-6 font-bold text-[#008000]">Difficulty: Easy</p>
@@ -164,7 +153,6 @@
 				The custom operation requires calculating the standard sum of the two input integers and then incrementing that sum by exactly 1.
 			</p>
 
-			<!-- Ultra-modern, sleek contrast block -->
 			<div class="my-8 p-4 sm:p-6 bg-white/90 backdrop-blur-md rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 text-center text-2xl sm:text-3xl tracking-wide text-slate-800 overflow-x-auto transform transition-all hover:-translate-y-1 hover:shadow-[0_30px_60px_rgba(0,0,0,0.15)] duration-500 ease-out" style="font-family: 'Fira Code', monospace; font-variant-ligatures: common-ligatures contextual;">
 				<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
 					<mi>f</mi>
@@ -223,6 +211,9 @@
 					</math>
 				</li>
 			</ul>
+			<div class="mt-8 text-center">
+				<a href="https://github.com" class="text-blue-700 font-bold hover:underline">GitHub</a>
+			</div>
 		</div>
 	</center>
 </div>
