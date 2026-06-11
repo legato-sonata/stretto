@@ -133,18 +133,19 @@
 		
 		<!-- Explanation Section -->
 		<div class="text-left w-full max-w-2xl bg-[#c0c0c0] border-4 border-t-white border-l-white border-b-gray-600 border-r-gray-600 p-6 mb-8 font-serif leading-relaxed">
-			<h2 class="text-xl font-bold mb-4"><u>Logical Analysis</u></h2>
+			<h2 class="text-xl font-bold mb-4"><u>Analisi Logica</u></h2>
 			<p class="mb-4">
-				The premise of the query relies on a mathematical inconsistency. In standard base-10 arithmetic, the equations provided are false (e.g., 2 + 10 &ne; 13). The "+" symbol and "=" sign in this context do not represent standard mathematical addition and equality. Instead, they indicate a custom logical function designed for pattern recognition.
+				La premessa del quesito si fonda su un'incongruenza matematica. Nell'aritmetica standard in base 10, le equazioni fornite risultano false (es. 2 + 10 &ne; 13). Il simbolo "+" e il segno "=" in questo contesto non rappresentano l'addizione e l'uguaglianza matematica convenzionale. Indicano bensì una funzione logica personalizzata, concepita per il riconoscimento di schemi.
 			</p>
 
-			<h2 class="text-xl font-bold mb-4 mt-6"><u>Pattern Identification</u></h2>
+			<h2 class="text-xl font-bold mb-4 mt-6"><u>Identificazione dello Schema</u></h2>
 			<p class="mb-4">
-				The underlying rule governing this dataset is that the final result is exactly 1 greater than the standard sum of the two numbers provided.
-				If we define the left side of the equation as variables <i>x</i> and <i>y</i>, the pattern functions according to the following formula:
+				La regola soggiacente che governa questo insieme di dati stabilisce che il risultato finale sia esattamente superiore di 1 rispetto alla somma standard dei due numeri forniti.
+				Definendo il lato sinistro dell'equazione con le variabili <i>x</i> e <i>y</i>, lo schema opera secondo la seguente formula:
 			</p>
 
-			<div class="my-6 p-4 bg-white border-4 border-t-gray-600 border-l-gray-600 border-b-white border-r-white text-center text-2xl font-serif overflow-x-auto">
+			<!-- Ultra-modern, sleek contrast block -->
+			<div class="my-10 p-8 bg-white/90 backdrop-blur-md rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 text-center text-4xl font-sans tracking-wide text-slate-800 overflow-x-auto transform transition-all hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(0,0,0,0.15)] duration-500 ease-out">
 				<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
 					<mi>f</mi>
 					<mo>(</mo>
@@ -163,14 +164,14 @@
 				</math>
 			</div>
 
-			<p class="mb-2">Applying this formula to the provided data validates the pattern:</p>
+			<p class="mb-2">L'applicazione di questa formula ai dati forniti convalida lo schema:</p>
 			<ul class="list-square list-inside ml-4 space-y-2 mb-4">
-				<li>For 2 + 10: <b>(2 + 10) + 1 = 13</b></li>
-				<li>For 2 + 8: <b>(2 + 8) + 1 = 11</b></li>
-				<li>For 6 + 10: <b>(6 + 10) + 1 = 17</b></li>
+				<li>Per 2 + 10: <b>(2 + 10) + 1 = 13</b></li>
+				<li>Per 2 + 8: <b>(2 + 8) + 1 = 11</b></li>
+				<li>Per 6 + 10: <b>(6 + 10) + 1 = 17</b></li>
 			</ul>
 			<p class="mt-4">
-				<i>The pattern is a standard addition operation incremented by a constant value of one.</i>
+				<i>Lo schema si configura come un'operazione di addizione standard incrementata da un valore costante pari a uno.</i>
 			</p>
 		</div>
 	</center>
