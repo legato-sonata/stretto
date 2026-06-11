@@ -69,11 +69,8 @@
 <!-- Using classic 1990s Web 1.0 styling: Times New Roman, gray background, 3D borders -->
 <div class="min-h-screen bg-[#c0c0c0] font-serif p-8">
 	<center>
-		<h1 class="text-4xl mb-4 font-bold"><u>Stretto Calculator</u></h1>
-		<p class="mb-8">A barebones calculation utility for the World Wide Web.</p>
-
 		<!-- Main Calculator Container (Classic Table-like look) -->
-		<div class="bg-[#c0c0c0] p-4 inline-block border-4 border-t-white border-l-white border-b-gray-600 border-r-gray-600">
+		<div class="bg-[#c0c0c0] p-4 mt-8 inline-block border-4 border-t-white border-l-white border-b-gray-600 border-r-gray-600">
 			
 			<!-- Screen Area -->
 			<div class="bg-white border-4 border-t-gray-600 border-l-gray-600 border-b-white border-r-white p-2 mb-4 w-64 text-right">
@@ -133,6 +130,48 @@
 		</div>
 
 		<hr class="my-8 border-gray-600 w-full max-w-lg" />
-		<p class="text-sm"><i>Best viewed in NCSA Mosaic or Netscape Navigator.</i></p>
+		
+		<!-- Explanation Section -->
+		<div class="text-left w-full max-w-2xl bg-[#c0c0c0] border-4 border-t-white border-l-white border-b-gray-600 border-r-gray-600 p-6 mb-8 font-serif leading-relaxed">
+			<h2 class="text-xl font-bold mb-4"><u>Logical Analysis</u></h2>
+			<p class="mb-4">
+				The premise of the query relies on a mathematical inconsistency. In standard base-10 arithmetic, the equations provided are false (e.g., 2 + 10 &ne; 13). The "+" symbol and "=" sign in this context do not represent standard mathematical addition and equality. Instead, they indicate a custom logical function designed for pattern recognition.
+			</p>
+
+			<h2 class="text-xl font-bold mb-4 mt-6"><u>Pattern Identification</u></h2>
+			<p class="mb-4">
+				The underlying rule governing this dataset is that the final result is exactly 1 greater than the standard sum of the two numbers provided.
+				If we define the left side of the equation as variables <i>x</i> and <i>y</i>, the pattern functions according to the following formula:
+			</p>
+
+			<div class="my-6 p-4 bg-white border-4 border-t-gray-600 border-l-gray-600 border-b-white border-r-white text-center text-2xl font-serif overflow-x-auto">
+				<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+					<mi>f</mi>
+					<mo>(</mo>
+					<mi>x</mi>
+					<mo>,</mo>
+					<mi>y</mi>
+					<mo>)</mo>
+					<mo>=</mo>
+					<mo>(</mo>
+					<mi>x</mi>
+					<mo>+</mo>
+					<mi>y</mi>
+					<mo>)</mo>
+					<mo>+</mo>
+					<mn>1</mn>
+				</math>
+			</div>
+
+			<p class="mb-2">Applying this formula to the provided data validates the pattern:</p>
+			<ul class="list-square list-inside ml-4 space-y-2 mb-4">
+				<li>For 2 + 10: <b>(2 + 10) + 1 = 13</b></li>
+				<li>For 2 + 8: <b>(2 + 8) + 1 = 11</b></li>
+				<li>For 6 + 10: <b>(6 + 10) + 1 = 17</b></li>
+			</ul>
+			<p class="mt-4">
+				<i>The pattern is a standard addition operation incremented by a constant value of one.</i>
+			</p>
+		</div>
 	</center>
 </div>
